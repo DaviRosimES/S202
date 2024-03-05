@@ -1,0 +1,12 @@
+{
+    "professor": {
+	    "nome" : "Jonas"
+    },
+    "assunto" : "Banco de Dados 2",
+    "alunos" : [
+	    {"nome" : "Pedro"}, 
+	    {"nome" : "José"},
+	    {"nome" : "Maria"},
+	    {"nome" : "Ana"}
+    ]
+}

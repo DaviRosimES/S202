@@ -1,0 +1,13 @@
+{
+    "professor": {
+            "nome" : "Ynoguti"
+    },
+    "assunto" : "Algoritmos 1",
+    "alunos" : [
+            {"nome" : "Diogo"}, 
+            {"nome" : "Miguel"},
+            {"nome" : "Lucas"},
+            {"nome" : "Davi"}
+    ]
+}
+

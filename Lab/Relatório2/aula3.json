@@ -1,0 +1,13 @@
+{
+    "professor": {
+            "nome" : "Renan"
+    },
+    "assunto" : "Cálculo 1",
+    "alunos" : [
+            {"nome" : "Elisa"}, 
+            {"nome" : "Jaqueline"},
+            {"nome" : "Matthias"},
+            {"nome" : "Veronika"}
+    ]
+}
+
