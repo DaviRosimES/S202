@@ -1,0 +1,68 @@
+create(:Pessoa:Economista{nome:"José", idade:67,sexo:"masculino"}),
+    (:Pessoa:Contadora{nome:"Tania", idade:40, sexo:"feminino"}),
+    (:Pessoa:Contadora{nome:"Talita", idade:40, sexo:"feminino"}),
+    (:Pessoa:AssistenteSocial{nome:"Tatiana", idade:42, sexo:"feminino"}),
+    (:Pessoa:Estudante{nome:"Samuel", idade:7,sexo:"masculino"}),
+    (:Pessoa:Estudante{nome:"Matthias", idade:8,sexo:"masculino"}),
+    (:Pessoa:Nenem{nome:"Veronika", idade:2, sexo:"feminino"}),
+    (:Pessoa:Estudante{nome:"Ana Clara", idade:20, sexo:"feminino"}),
+    (:Pessoa:Nenem{nome:"Elisa Akemi", idade:1, sexo:"feminino"}),
+    (:Pessoa:DonaDeCasa{nome:"Ana Dione", idade:67, sexo:"feminino"}),
+    (:Pessoa:Engenheiro{idade:20,nome:"Davi Rosim",sexo:"masculino"})
+
+match(p1:Pessoa{nome:"José"}),(p2:Pessoa {nome:"Tania"})
+    create (p1)-[:PAI_DE]->(p2)
+
+match(p1:Pessoa{nome:"José"}),(p2:Pessoa {nome:"Talita"})
+    create (p1)-[:PAI_DE]->(p2) 
+
+match(p1:Pessoa{nome:"José"}),(p2:Pessoa {nome:"Tatiana"})
+    create (p1)-[:PAI_DE]->(p2)
+
+match(p1:Pessoa{nome:"José"}),(p2:Pessoa {nome:"Ana Dione"})
+    create (p1)-[:ESPOSO_DE]->(p2)
+
+match(p1:Pessoa{nome:"Ana Dione"}),(p2:Pessoa {nome:"Talita"})
+    create (p1)-[:PAI_DE]->(p2)
+
+match(p1:Pessoa{nome:"Ana Dione"}),(p2:Pessoa {nome:"Tania"})
+    create (p1)-[:PAI_DE]->(p2)
+
+match(p1:Pessoa{nome:"Ana Dione"}),(p2:Pessoa {nome:"Tatiana"})
+    create (p1)-[:PAI_DE]->(p2)
+
+match(p1:Pessoa{nome:"Davi Rosim"}),(p2:Pessoa {nome:"Elisa Akemi"})
+    create (p1)-[:PAI_DE]->(p2)
+
+match(p1:Pessoa{nome:"Ana Clara"}),(p2:Pessoa {nome:"Elisa Akemi"})
+    create (p1)-[:PAI_DE]->(p2)
+
+match(p1:Pessoa{nome:"Tania"}),(p2:Pessoa {nome:"Davi Rosim"})
+    create (p1)-[:PAI_DE]->(p2)
+
+match(p1:Pessoa{nome:"Talita"}),(p2:Pessoa {nome:"Matthias"})
+    create (p1)-[:PAI_DE]->(p2)
+
+match(p1:Pessoa{nome:"Talita"}),(p2:Pessoa {nome:"Veronika"})
+    create (p1)-[:PAI_DE]->(p2)
+
+match(p1:Pessoa{nome:"Tatiana"}),(p2:Pessoa {nome:"Samuel"})
+    create (p1)-[:PAI_DE]->(p2)
+
+match(p1:Pessoa{nome:"Tania"}),(p2:Pessoa {nome:"Talita"})
+    create (p1)-[:IRMAO_GEMEO]->(p2)
+
+match(p1:Pessoa{nome:"Talita"}),(p2:Pessoa {nome:"Tania"})
+    create (p1)-[:IRMAO_GEMEO]->(p2)
+
+match(p1:Pessoa{nome:"Talita"}),(p2:Pessoa {nome:"Tatiana"})
+    create (p1)-[:IRMAO_DE]->(p2)
+
+match(p1:Pessoa{nome:"Tania"}),(p2:Pessoa {nome:"Tatiana"})
+    create (p1)-[:IRMAO_DE]->(p2)
+
+MATCH (a:Pessoa {nome: "Davi Rosim"}), (b:Pessoa {nome: "Ana Clara"})
+    CREATE (a)-[r:NAMORADO_DE {desde: 2020}]->(b)
+
+match (a:Pessoa {nome: "Davi Rosim"}), (b:Pessoa {nome: "Ana Clara"})
+    create (b)-[r:NAMORADO_DE {desde: 2020}]->(a)
