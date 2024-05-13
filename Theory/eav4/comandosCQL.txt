@@ -1,0 +1,12 @@
+Q1)
+create table peca(id BIGINT, nome TEXT, carro TEXT, estante INT, nivel INT, quantidade INT, PRIMARY KEY((id, nome, carro),estante,nivel,quantidade));
+insert into peca(id,nome,carro,estante,nivel,quantidade) values(5,'Pistao','Mustang',4,1,167);
+insert into peca(id,nome,carro,estante,nivel,quantidade) values(4,'Suspencao','Argo',1,1,3500);
+Q2)
+select estante,nivel,quantidade from peca where id = 5 and nome = 'Pistao' and carro = 'Mustang';
+select avg(quantidade) frm peca;
+select count(*) from peca;
+select max(quantidade) as "maior_quantidade", min(quantidade) as "menor_quantidade" from peca;
+select nome, carro, quantidade from peca where estante = 3 allow filtering;
+select avg(quantidade) from peca where nivel = 1 allow filtering;
+select * from peca where estante < 3 and nivel > 4 allow filtering;
